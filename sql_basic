@@ -1,0 +1,54 @@
+SELECT * FROM celebs;
+ add
+INSERT INTO celebs (id, name, age) VALUES (2, 'Beyonce Knowles', 33); 
+
+ALTER TABLE celebs ADD COLUMN twitter_handle TEXT; 
+
+UPDATE
+UPDATE celebs SET twitter_handle = '@taylorswift13' WHERE id = 4; 
+
+DELETE
+DELETE FROM celebs WHERE twitter_handle IS NULL;
+
+Constraints
+ 
+CREATE TABLE celebs (
+   id INTEGER PRIMARY KEY, 
+   name TEXT UNIQUE,
+   date_of_birth TEXT NOT NULL,
+   date_of_death TEXT DEFAULT 'Not Applicable'
+);
+
+
+SELECT DISTINCT year 
+FROM movies;
+
+
+SELECT * 
+FROM movies 
+WHERE imdb_rating < 5;
+
+SELECT * 
+FROM movies
+WHERE name LIKE 'Se_en';
+
+SELECT * 
+FROM movies 
+WHERE name LIKE '%man%';
+
+SELECT name
+FROM movies 
+WHERE imdb_rating IS NOT NULL;
+
+SELECT *
+FROM movies
+WHERE name BETWEEN 'D' AND 'G';
+
+SELECT *
+FROM movies
+WHERE year < 1985
+   AND genre = 'horror';
+   
+   SELECT name, year, imdb_rating
+FROM movies
+ORDER BY imdb_rating DESC;
