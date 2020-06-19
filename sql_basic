@@ -52,3 +52,12 @@ WHERE year < 1985
    SELECT name, year, imdb_rating
 FROM movies
 ORDER BY imdb_rating DESC;
+--------------------------------------
+自己加了一个 列 review 按条件 出值
+SELECT name,
+ CASE
+  WHEN imdb_rating > 8 THEN 'Fantastic'
+  WHEN imdb_rating > 6 THEN 'Poorly Received'
+  ELSE 'Avoid at All Costs'
+ END AS 'Review'
+FROM movies;
